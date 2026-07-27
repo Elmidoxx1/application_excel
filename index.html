@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Application Gestion Distribution</title>
 </head>
@@ -10,13 +11,24 @@
 
 <input type="text" id="recherche" placeholder="Rechercher...">
 
+<br><br>
+
 <table border="1" id="tableau">
-<tr>
-<th>Nom</th>
-<th>Montant</th>
-<th>Service</th>
-</tr>
+    <tr>
+        <th>Nom</th>
+        <th>Montant</th>
+        <th>Service</th>
+    </tr>
 </table>
 
+
+<!-- Lecture des fichiers Excel -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+<!-- Notre programme -->
+<script src="script.js"></script>
+
+
 </body>
+
 </html>
