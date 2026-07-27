@@ -3,6 +3,7 @@ const fichierExcel = "قائمة توزيع سفيان.xlsx";
 fetch(fichierExcel)
 .then(response => response.arrayBuffer())
 .then(data => {
+
     const workbook = XLSX.read(data, {
         type: "array"
     });
@@ -13,16 +14,19 @@ fetch(fichierExcel)
 
     const tableau = document.getElementById("tableau");
 
+
     lignes.forEach(ligne => {
 
         let tr = document.createElement("tr");
 
         tr.innerHTML = `
-        <td>${ligne.Nom || ""}</td>
-        <td>${ligne.Montant || ""}</td>
-        <td>${ligne.Service || ""}</td>
+            <td>${Object.values(ligne)[0] || ""}</td>
+            <td>${Object.values(ligne)[1] || ""}</td>
+            <td>${Object.values(ligne)[2] || ""}</td>
         `;
 
         tableau.appendChild(tr);
+
     });
+
 });
